@@ -11,7 +11,7 @@ public class SensorManager : MonoBehaviour
     private string xStr;
     private string yStr;
     private string zStr;
-    private Gyroscope m_gyro;
+    public static Gyroscope m_gyro;
     private Quaternion gyroOutput;
     public GameObject cube;
     private GameObject sphere;
