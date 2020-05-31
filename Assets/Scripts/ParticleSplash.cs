@@ -5,18 +5,27 @@ using UnityEngine;
 public class ParticleSplash : MonoBehaviour
 {
     
-    private ParticleSystem _psystem;
+    public ParticleSystem splash;
       
     void Awake() {
-        _psystem = GetComponent<ParticleSystem>();
+        splash = GetComponent<ParticleSystem>();
     }
     void Start()
     {
         
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+      Debug.Log(other.collider.transform.position);
+      Vector3 splashPos = other.collider.transform.position;
+      ParticleSystem clone = Instantiate(splash, splashPos, Quaternion.identity);
+      // firework.GetComponent<ParticleSystem>().Play();
+      clone.Play();
+    }
+
     void OnTriggerEnter (Collider col)  {
-      _psystem.Play();
+      splash.Play();
     }
     
     void Update()

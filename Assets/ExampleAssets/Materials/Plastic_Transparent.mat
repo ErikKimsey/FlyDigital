@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Plastic_Transparent
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_ShaderKeywords: _RECEIVE_SHADOWS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
@@ -80,7 +80,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
-    - _Blend: 1
+    - _Blend: 0
     - _BumpScale: 1
     - _Cull: 0
     - _Cutoff: 0.5
@@ -90,22 +90,22 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.9
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.922
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0.9
+    - _ReceiveShadows: 0
+    - _Smoothness: 0.907
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _SrcBlend: 1
+    - _SrcBlend: 5
     - _Surface: 1
     - _UVSec: 0
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 0.60560805, g: 0.2753649, b: 0.6415094, a: 0.6}
+    - _BaseColor: {r: 0.73390347, g: 0.3213332, b: 0.7830188, a: 0.7176471}
     - _Color: {r: 0.41509426, g: 0.41509426, b: 0.41509426, a: 0.6}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
