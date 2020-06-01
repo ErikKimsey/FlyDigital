@@ -47,7 +47,6 @@ public class CastManager : MonoBehaviour
     private void HandleTouch(){
     if (Input.touchCount > 0)
         {
-          Debug.Log("TOUCHED");
             Touch touch = Input.GetTouch(0);
             switch (touch.phase)
             {
@@ -55,21 +54,13 @@ public class CastManager : MonoBehaviour
                   ReadyCast();
                   break;
 
-                // Determine direction by comparing the current touch position with the initial one.
-                case TouchPhase.Moved:
-                    
-                  break;
-
-                // Report that a direction has been chosen when the finger is lifted.
                 case TouchPhase.Ended:
                   Cast();
                   break;
             }
         }
-
     }
 
-    // Update is called once per frame
     void Update()
     {
       HandleTouch();

@@ -32,17 +32,5 @@ public class SensorManager : MonoBehaviour
     void Update()
     {
       gyroOutput = m_gyro.attitude;
-      xStr = gyroOutput.x.ToString();
-      yStr = gyroOutput.y.ToString();
-      zStr = gyroOutput.z.ToString();
-      
-      // float xPos = gyroOutput.x + Time.deltaTime + cube.transform.position.x;
-      // float yPos = gyroOutput.y + Time.deltaTime + cube.transform.position.y;
-      // cube.transform.position = new Vector3(xPos, yPos, 12f);
-      // x.SetText(gyroOutput.x.ToString());
-      x.SetText(gyroOutput.ToString());
-      // x.SetText(gyroOutput.x.ToString());
-      y.SetText(m_gyro.userAcceleration.ToString());
-      z.SetText(gyroOutput.z.ToString());
     }
 }
