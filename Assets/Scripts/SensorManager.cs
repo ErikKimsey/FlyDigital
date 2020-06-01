@@ -27,7 +27,6 @@ public class SensorManager : MonoBehaviour
       z = GameObject.Find("z").GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
     void Update()
     {
       gyroOutput = m_gyro.attitude;
