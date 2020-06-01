@@ -25,10 +25,14 @@ public class SensorManager : MonoBehaviour
       x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();
       y = GameObject.Find("y").GetComponent<TextMeshProUGUI>();
       z = GameObject.Find("z").GetComponent<TextMeshProUGUI>();
+      x.SetText("YOYOYO");
+      Debug.Log(x);
     }
 
     void Update()
     {
       gyroOutput = m_gyro.attitude;
+      xStr = m_gyro.userAcceleration.ToString();
+      x.SetText(xStr);
     }
 }

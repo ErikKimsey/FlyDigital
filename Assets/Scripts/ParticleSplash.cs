@@ -6,10 +6,6 @@ public class ParticleSplash : MonoBehaviour
 {
     
     public ParticleSystem splash;
-      
-    void Awake() {
-        splash = GetComponent<ParticleSystem>();
-    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -17,8 +13,4 @@ public class ParticleSplash : MonoBehaviour
       ParticleSystem clone = Instantiate(splash, splashPos, Quaternion.identity);
       clone.Play();
     }
-
-    // void OnTriggerEnter (Collider col)  {
-    //   splash.Play();
-    // }
 }

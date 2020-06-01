@@ -20,10 +20,12 @@ public class CastManager : MonoBehaviour
 
     public void ReadyCast(){
       Debug.Log("ReadyCast");
+      attitude = m_gyro.userAcceleration;
     }
 
     public void Cast(){
       Vector3 movement = new Vector3(attitude.x, Mathf.Abs(attitude.y+2f), Mathf.Abs(attitude.z+2f*12f));
+      Debug.Log(movement);
       GameObject fly_instance;
       fly_instance = Instantiate(fly_prefab, fly_prefab.transform.position, transform.rotation);
       fly_rb = fly_instance.GetComponent<Rigidbody>();
