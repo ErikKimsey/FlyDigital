@@ -8,23 +8,24 @@ public class CastManager : MonoBehaviour
     private GameObject fly;
     private Rigidbody fly_rb;
     private static Gyroscope m_gyro;
-    private Vector3 attitude;
+    private Quaternion attitude;
+    private Vector3 acceleration;
     public float speed;
     public GameObject fly_prefab;
 
     void Start()
     {
       m_gyro = SensorManager.m_gyro;
-      attitude = m_gyro.userAcceleration;
+      acceleration = m_gyro.userAcceleration;
     }
 
     public void ReadyCast(){
       Debug.Log("ReadyCast");
-      attitude = m_gyro.userAcceleration;
+      acceleration = m_gyro.userAcceleration;
     }
 
     public void Cast(){
-      Vector3 movement = new Vector3(attitude.x, Mathf.Abs(attitude.y+2f), Mathf.Abs(attitude.z+2f*12f));
+      Vector3 movement = new Vector3(acceleration.x, Mathf.Abs(acceleration.y+2f), Mathf.Abs(acceleration.z+2f*12f));
       Debug.Log(movement);
       GameObject fly_instance;
       fly_instance = Instantiate(fly_prefab, fly_prefab.transform.position, transform.rotation);

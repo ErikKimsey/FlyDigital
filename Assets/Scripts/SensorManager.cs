@@ -12,7 +12,8 @@ public class SensorManager : MonoBehaviour
     private string yStr;
     private string zStr;
     public static Gyroscope m_gyro;
-    private Quaternion gyroOutput;
+    private Quaternion gyroAttitude;
+    private Vector3 gyroAcceleration;
     public GameObject cube;
     private GameObject sphere;
 
@@ -25,14 +26,23 @@ public class SensorManager : MonoBehaviour
       x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();
       y = GameObject.Find("y").GetComponent<TextMeshProUGUI>();
       z = GameObject.Find("z").GetComponent<TextMeshProUGUI>();
-      x.SetText("YOYOYO");
-      Debug.Log(x);
+    }
+
+    public Vector3 GetAcceleration(){
+      return gyroAcceleration;
+    }
+
+    public Quaternion GetAttitude(){
+      return gyroAttitude;
     }
 
     void Update()
     {
-      gyroOutput = m_gyro.attitude;
-      xStr = m_gyro.userAcceleration.ToString();
+      gyroAttitude = m_gyro.attitude;
+      gyroAcceleration = m_gyro.userAcceleration;
+      xStr = gyroAttitude.ToString();
+      yStr = gyroAcceleration.ToString();
       x.SetText(xStr);
+      y.SetText(yStr);
     }
 }
