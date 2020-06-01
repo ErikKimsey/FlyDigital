@@ -25,7 +25,6 @@ public class SensorManager : MonoBehaviour
       x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();
       y = GameObject.Find("y").GetComponent<TextMeshProUGUI>();
       z = GameObject.Find("z").GetComponent<TextMeshProUGUI>();
-      // button.
     }
 
     // Update is called once per frame
