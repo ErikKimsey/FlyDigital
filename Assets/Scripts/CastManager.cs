@@ -19,15 +19,13 @@ public class CastManager : MonoBehaviour
     }
 
     public void ReadyCast(){
-      // fly = GameObject.CreatePrimitive(PrimitiveType.Cube);
-      // fly.transform.position = new Vector3(0f, 2f, 10f);
+      Debug.Log("ReadyCast");
     }
 
     public void Cast(){
       Vector3 movement = new Vector3(attitude.x, Mathf.Abs(attitude.y+2f), Mathf.Abs(attitude.z+2f*12f));
       GameObject fly_instance;
       fly_instance = Instantiate(fly_prefab, fly_prefab.transform.position, transform.rotation);
-      // fly_rb = fly.AddComponent<Rigidbody>();
       fly_rb = fly_instance.GetComponent<Rigidbody>();
       fly_rb.AddForce(movement * speed);
     }
