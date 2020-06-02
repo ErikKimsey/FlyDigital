@@ -23,9 +23,9 @@ public class SensorManager : MonoBehaviour
       m_gyro = Input.gyro;
       
       m_gyro.enabled = true;
-      x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();
-      y = GameObject.Find("y").GetComponent<TextMeshProUGUI>();
-      z = GameObject.Find("z").GetComponent<TextMeshProUGUI>();
+      // x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();
+      // y = GameObject.Find("y").GetComponent<TextMeshProUGUI>();
+      // z = GameObject.Find("z").GetComponent<TextMeshProUGUI>();
     }
 
     public Vector3 GetAcceleration(){

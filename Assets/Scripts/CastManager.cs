@@ -18,10 +18,10 @@ public class CastManager : MonoBehaviour
     {
       m_gyro = SensorManager.m_gyro;
       acceleration = m_gyro.userAcceleration;
+      chargeParticles = GetComponent<ParticleChargeManager>();
     }
 
     public void ReadyCast(){
-      chargeParticles = GetComponent<ParticleChargeManager>();
       chargeParticles.ChargeParticles();
       acceleration = m_gyro.userAcceleration;
     }
