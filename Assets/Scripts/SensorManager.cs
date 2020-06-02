@@ -21,7 +21,7 @@ public class SensorManager : MonoBehaviour
     {
       Screen.orientation = ScreenOrientation.Portrait;
       m_gyro = Input.gyro;
-      Debug.Log((m_gyro));
+      
       m_gyro.enabled = true;
       x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();
       y = GameObject.Find("y").GetComponent<TextMeshProUGUI>();
@@ -40,9 +40,9 @@ public class SensorManager : MonoBehaviour
     {
       gyroAttitude = m_gyro.attitude;
       gyroAcceleration = m_gyro.userAcceleration;
-      xStr = gyroAttitude.ToString();
-      yStr = gyroAcceleration.ToString();
-      x.SetText(xStr);
-      y.SetText(yStr);
+      // xStr = gyroAttitude.ToString();
+      // yStr = gyroAcceleration.ToString();
+      // x.SetText(xStr);
+      // y.SetText(yStr);
     }
 }

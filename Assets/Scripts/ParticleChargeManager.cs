@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class ParticleChargeManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
+    public ParticleSystem chargingParticles;
 
     // -- On ReadyCast --
     // * Play particles,
-    // **** 
+    public void ChargeParticles(){
+      Debug.Log("CHARGE PLAYING");
+      chargingParticles.Play();
+    }
 
     // -- On Cast --
     // * Stop Particles
-    // ****
+    public void ReleaseParticles(){
+      Debug.Log("CHARGE STOPPING");
+      chargingParticles.Stop();
+    }
 
     // Update is called once per frame
     void Update()

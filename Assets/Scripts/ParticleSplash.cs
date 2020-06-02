@@ -10,8 +10,9 @@ public class ParticleSplash : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
       Vector3 splashPos = other.collider.transform.position;
-      Instantiate(splash, splashPos, Quaternion.identity);
+      
+      ParticleSystem clone = Instantiate(splash, splashPos, Quaternion.identity);
       // ParticleSystem clone = Instantiate(splash, splashPos, Quaternion.identity);
-      splash.Play();
+      clone.Play();
     }
 }

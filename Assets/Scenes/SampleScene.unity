@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &201816416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 297111352}
   - component: {fileID: 297111351}
   m_Layer: 5
-  m_Name: Button
+  m_Name: exit_btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,7 +800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &539287005
 RectTransform:
   m_ObjectHideFlags: 0
@@ -955,7 +955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &620474057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6747,7 +6747,7 @@ GameObject:
   - component: {fileID: 2009209958}
   - component: {fileID: 2009209957}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

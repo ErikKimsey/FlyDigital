@@ -12,6 +12,7 @@ public class CastManager : MonoBehaviour
     private Vector3 acceleration;
     public float speed;
     public GameObject fly_prefab;
+    ParticleChargeManager chargeParticles;
 
     void Start()
     {
@@ -20,7 +21,8 @@ public class CastManager : MonoBehaviour
     }
 
     public void ReadyCast(){
-      Debug.Log("ReadyCast");
+      chargeParticles = GetComponent<ParticleChargeManager>();
+      chargeParticles.ChargeParticles();
       acceleration = m_gyro.userAcceleration;
     }
 
@@ -31,6 +33,7 @@ public class CastManager : MonoBehaviour
       fly_instance = Instantiate(fly_prefab, fly_prefab.transform.position, transform.rotation);
       fly_rb = fly_instance.GetComponent<Rigidbody>();
       fly_rb.AddForce(movement * speed);
+      chargeParticles.ReleaseParticles();
     }
 
     private void OnMouseDown()
