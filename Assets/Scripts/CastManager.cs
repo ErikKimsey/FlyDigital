@@ -7,26 +7,27 @@ public class CastManager : MonoBehaviour
     // Start is called before the first frame update
     private GameObject fly;
     private Rigidbody fly_rb;
-    private static Gyroscope m_gyro;
+    // private static Gyroscope m_gyro;
     private Quaternion attitude;
     private Vector3 acceleration;
     public float speed;
     public GameObject fly_prefab;
     ParticleChargeManager chargeParticles;
+    SensorManager m_gyro;
 
     void Start()
     {
-      m_gyro = SensorManager.m_gyro;
-      acceleration = m_gyro.userAcceleration;
       chargeParticles = GetComponent<ParticleChargeManager>();
+      m_gyro = GetComponent<SensorManager>();
     }
 
     public void ReadyCast(){
       chargeParticles.ChargeParticles();
-      acceleration = m_gyro.userAcceleration;
     }
 
     public void Cast(){
+      acceleration = m_gyro.GetAcceleration();
+      attitude = m_gyro.GetAttitude();
       Vector3 movement = new Vector3(attitude.x, Mathf.Abs(attitude.y+2f), Mathf.Abs(attitude.z+2f*12f));
       Debug.Log(attitude);
       GameObject fly_instance;
