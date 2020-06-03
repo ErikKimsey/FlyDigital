@@ -38,8 +38,10 @@ public class SensorManager : MonoBehaviour
     void Update()
     {
       gyroAttitude = m_gyro.attitude;
+      Debug.Log("sm_attitude");
       gyroAcceleration = m_gyro.userAcceleration;
-      xStr = gyroAttitude.ToString();
+      Debug.Log("sm_accel");
+      xStr = gyroAcceleration.ToString();
       // yStr = gyroAcceleration.ToString();
       x.SetText(xStr);
       // y.SetText(yStr);
