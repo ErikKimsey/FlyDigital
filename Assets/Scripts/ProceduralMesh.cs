@@ -17,6 +17,7 @@ public class ProceduralMesh : MonoBehaviour
       pgMesh = new Mesh();
       pgMeshFilter = gameObject.AddComponent<MeshFilter>();
       pgMeshRenderer = gameObject.AddComponent<MeshRenderer>();
+      pgMeshFilter.mesh = pgMesh;
     }
 
     private void BuildMesh(){
