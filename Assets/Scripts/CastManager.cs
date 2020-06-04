@@ -40,7 +40,7 @@ public class CastManager : MonoBehaviour
       GameObject fly_instance;
       fly_instance = Instantiate(fly_prefab, fly_prefab.transform.position, Quaternion.identity);
       fly_rb = fly_instance.GetComponent<Rigidbody>();
-      fly_rb.velocity = new Vector3(highestAccel.x, Mathf.Abs(highestAccel.y),Mathf.Abs(highestAccel.z)) * 20f;
+      fly_rb.velocity = new Vector3(highestAccel.x, Mathf.Abs(highestAccel.y) + 1f * 10f, Mathf.Abs(highestAccel.z)+ 2f * 10f);
       Debug.Log("fly_rb.velocity");
       Debug.Log(fly_rb.velocity);
       chargeParticles.ReleaseParticles();
