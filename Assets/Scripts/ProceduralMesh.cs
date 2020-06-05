@@ -10,14 +10,9 @@ public class ProceduralMesh : MonoBehaviour
     public int verticesMax;
 
     private Mesh pgMesh;
-    private MeshFilter pgMeshFilter;
-    private MeshRenderer pgMeshRenderer;
 
     void Start(){
-      // pgMesh = new Mesh();
       pgMesh = GetComponent<MeshFilter>().mesh;
-      // pgMeshRenderer = gameObject.AddComponent<MeshRenderer>();
-      // pgMesh = pgMeshFilter.mesh;
       BuildMesh();
       DrawMesh();
     }
@@ -25,11 +20,13 @@ public class ProceduralMesh : MonoBehaviour
     private void BuildMesh(){
       vertices = new Vector3[]{
         new Vector3(0f,0f,0f), 
-        new Vector3(0f, 0f, 1f),
-        new Vector3(1f, 0f, 1f)
+        new Vector3(0f, 2f, 0f),
+        new Vector3(2f, 0f, 2f),
+        
         // new Vector3(0f, 0f, -1f),
         // new Vector3(0f, 0f, -1f),
         // new Vector3(0f, 0f, -1f),
+
       };
 
       tris = new int[]{
