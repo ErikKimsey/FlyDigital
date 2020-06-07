@@ -23,35 +23,37 @@ public class IcosphereBuilder : MonoBehaviour
 
     void Start()
     {
-      tris = new int[]{};
+      tris = new int[maxTris];
+      vertices = new Vector3[maxVertices];
       xPos = 0f;
       yPos = 0f;
       zPos = 0f;
       theta = (1 + Mathf.Sqrt(5))/sideLength;
+      CreateVertices();
     }
 
 
 
     void CreateVertices(){
-
-      vertices = new Vector3[]{};
       theta = (1 + Mathf.Sqrt(5))/sideLength;
       for (int i = 0; i < maxVertices; i++){
+        Debug.Log(i);
         if(i % 6 == 0) {
-          vertices[i] = new Vector3(theta * -1, i, i * -1);
-        } else if(i % 5 ==0) {
-          vertices[i] = new Vector3(i * -1, theta * -1f, i);
+          vertices[i] = new Vector3(theta * -1, 0, i * -1);
+        } else if (i % 5 == 0) {
+          vertices[i] = new Vector3(i * -1, theta * -1f, 0);
         } else if(i % 4 == 0) {
-          vertices[i] = new Vector3(i, i * -1, theta);
+          vertices[i] = new Vector3(0, i * -1, theta);
         } else if(i % 3 == 0 ) {
-          vertices[i] = new Vector3(theta + 1, i, i+1);
+          vertices[i] = new Vector3(theta + 1, 0, i+1);
         } else if(i % 2 == 0) {
-          vertices[1] = new Vector3(i + 1, theta + 1f, i);
+          vertices[1] = new Vector3(i + 1, theta + 1f, 0);
         } else {
-          vertices[i] = new Vector3(i, i + 1, theta);
+          vertices[i] = new Vector3(0, i + 1, theta);
         }
         Debug.Log(vertices[i]);
       }
+      CreateTris();
     }
 
       void CreateTris(){
@@ -62,7 +64,7 @@ public class IcosphereBuilder : MonoBehaviour
         // (a, b, c), (b,c,d), (c,d,e), (d,e,f), (e,f,g),...
         // (1,2,3), (2,3,4), (3,4,5), (4,5,6), (5,6,7)
         // 
-        for (int i = 0; i < maxTris; i++) {
+        for (int i = 0; i < maxTris + 6; i++) {
           tris[i] = i;
           tris[i + 1] = tris[i + 3] = i + 1;
           tris[i + 2] = tris[i + 4] = i + 2;
@@ -88,5 +90,4 @@ public class IcosphereBuilder : MonoBehaviour
       * tris[10] = vertices[3],
       * tris[11] = vertices[5],
       */
-    }
 }
