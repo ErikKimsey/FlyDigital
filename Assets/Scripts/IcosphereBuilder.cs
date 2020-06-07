@@ -34,21 +34,25 @@ public class IcosphereBuilder : MonoBehaviour
 
     void CreateVertices(){
 
-      // (0, +/-1, theta)
-      // (+/-1 +/-theta, 0)
-      // (+/-theta, 0, +/-1)
-      // theta = (1 + sqrt(5))/2  ; where "2" is side length
-
-
       vertices = new Vector3[]{};
+      theta = (1 + Mathf.Sqrt(5))/sideLength;
       for (int i = 0; i < maxVertices; i++){
-        for (int j = 0; j<3 ; j++)   {
-          vertices[vertIter] = new Vector3(i, i+1, theta + i);
-          vertices[vertIter + 1] = new Vector3(i + 1, theta + 1, i);
-          vertices[vertIter + 2] = new Vector3(theta + 1, i, i+1);
+        if(i % 6 == 0) {
+          vertices[i] = new Vector3(theta * -1, i, i * -1);
+        } else if(i % 5 ==0) {
+          vertices[i] = new Vector3(i * -1, theta * -1f, i);
+        } else if(i % 4 == 0) {
+          vertices[i] = new Vector3(i, i * -1, theta);
+        } else if(i % 3 == 0 ) {
+          vertices[i] = new Vector3(theta + 1, i, i+1);
+        } else if(i % 2 == 0) {
+          vertices[1] = new Vector3(i + 1, theta + 1f, i);
+        } else {
+          vertices[i] = new Vector3(i, i + 1, theta);
         }
-        vertIter += 4;
+        Debug.Log(vertices[i]);
       }
+    }
 
       void CreateTris(){
 
@@ -56,14 +60,14 @@ public class IcosphereBuilder : MonoBehaviour
         // indices pertain to that of the vertices[]
         // indices exist in a pattern of: 
         // (a, b, c), (b,c,d), (c,d,e), (d,e,f), (e,f,g),...
-
-        for (int i = 0; i < maxTris; i++){
-          for (int j = 0; j < 6; j++){
-            tris[i] = i;
-            tris[triIter + 1] = tris[triIter + 3] = i + 1;
-            // tris[triIter + 2] = 
-          }
+        // (1,2,3), (2,3,4), (3,4,5), (4,5,6), (5,6,7)
+        // 
+        for (int i = 0; i < maxTris; i++) {
+          tris[i] = i;
+          tris[i + 1] = tris[i + 3] = i + 1;
+          tris[i + 2] = tris[i + 4] = i + 2;
         }
+        Debug.Log(tris);
       }
 
 
