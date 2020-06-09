@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CastManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     private GameObject fly;
     private Rigidbody fly_rb;
     // private static Gyroscope m_gyro;
