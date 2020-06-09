@@ -35,14 +35,14 @@ public class CastManager : MonoBehaviour
     public void Cast(){
       Vector3 movement = new Vector3(attitude.x, Mathf.Abs(attitude.y*2f), Mathf.Abs(attitude.z+2f*12f));
       attitude = new Quaternion(0f, Mathf.Abs(attitude.y) * 5f, Mathf.Abs(attitude.z) * 5, attitude.w);
-      Debug.Log("acceleration");
-      Debug.Log(highestAccel);
+      // Debug.Log("acceleration");
+      // Debug.Log(highestAccel);
       GameObject fly_instance;
       fly_instance = Instantiate(fly_prefab, fly_prefab.transform.position, Quaternion.identity);
       fly_rb = fly_instance.GetComponent<Rigidbody>();
       fly_rb.velocity = new Vector3(highestAccel.x, Mathf.Abs(highestAccel.y) + 1f * 10f, Mathf.Abs(highestAccel.z)+ 2f * 10f);
-      Debug.Log("fly_rb.velocity");
-      Debug.Log(fly_rb.velocity);
+      // Debug.Log("fly_rb.velocity");
+      // Debug.Log(fly_rb.velocity);
       chargeParticles.ReleaseParticles();
     }
 
