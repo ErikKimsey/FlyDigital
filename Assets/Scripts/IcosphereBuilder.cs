@@ -37,7 +37,7 @@ public class IcosphereBuilder : MonoBehaviour
     void CreateVertices(){
       theta = (1 + Mathf.Sqrt(5))/sideLength;
       for (int i = 0; i < maxVertices; i++){
-        Debug.Log(i);
+        // Debug.Log(i);
         if(i % 6 == 0) {
           vertices[i] = new Vector3(theta * -1, 0, i * -1);
         } else if (i % 5 == 0) {
@@ -51,7 +51,7 @@ public class IcosphereBuilder : MonoBehaviour
         } else {
           vertices[i] = new Vector3(0, i + 1, theta);
         }
-        Debug.Log(vertices[i]);
+        // Debug.Log(vertices[i]);
       }
       CreateTris();
     }
@@ -69,7 +69,7 @@ public class IcosphereBuilder : MonoBehaviour
           tris[i + 1] = tris[i + 3] = i + 1;
           tris[i + 2] = tris[i + 4] = i + 2;
         }
-        Debug.Log(tris);
+        // Debug.Log(tris);
       }
 
 

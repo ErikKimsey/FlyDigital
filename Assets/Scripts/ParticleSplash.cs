@@ -10,22 +10,19 @@ public class ParticleSplash : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-      Vector3 splashPos = other.collider.transform.position;
+      // ParticleSystem clone;
       
-      ParticleSystem clone = Instantiate(splash, splashPos, Quaternion.identity);
-      clone.Play();
+        Vector3 splashPos = other.collider.transform.position;
+        Instantiate(splash, splashPos, Quaternion.identity);
+      // clone.Play();
 
-      destroyClone = DestroyClone(clone);
-      StartCoroutine(destroyClone);
+      // Destroy(clone,2f);
+      // destroyClone = DestroyClone(clone);
+      // StartCoroutine(destroyClone);
     }
 
-    private IEnumerator DestroyClone(ParticleSystem clone){
-      yield return new WaitForSeconds(0.5f);
-      clone.Stop();
-      clone.Clear();
-      Debug.Log("destroy");
-      Debug.Log(clone.isStopped);
-      Destroy(clone);
-      Debug.Log(clone);
+    private IEnumerator DestroyClone(ParticleSystem _clone){
+      Debug.Log(_clone);
+      yield return new WaitForSeconds(2f);
     }
 }
