@@ -20,7 +20,5 @@ public class GravityHandler : MonoBehaviour
     {
       userSurfaceDistance = (userRB.transform.position - planet.transform.position).normalized;
       userRB.AddForce(userSurfaceDistance * -gravity);
-
-      Debug.Log(userRB.transform.rotation);
     }
 }
