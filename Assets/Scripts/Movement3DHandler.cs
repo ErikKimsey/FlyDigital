@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Movement3DHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public Transform target;
     public float distance;
     public float height;
@@ -13,7 +11,6 @@ public class Movement3DHandler : MonoBehaviour
     public float rotationDamping;
     public int Speed;
     public int worldLayerMask;
-
 
     void Start()
     {
