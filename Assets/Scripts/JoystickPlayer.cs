@@ -15,11 +15,9 @@ public class JoystickPlayer : MonoBehaviour
       Quaternion q = Quaternion.AngleAxis(angle, axis);
       rb.MovePosition(q * (rb.transform.position - origin) + origin);
       rb.MoveRotation(rb.transform.rotation * q);
-
     }
 
-    public void FixedUpdate()
-    {
+    public void FixedUpdate(){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         worldAngle = Vector3.Angle(rb.transform.position, northPole);
