@@ -2137,7 +2137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132edb3d6bc63489b819c5397dbb793e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 19.21
   fly_prefab: {fileID: 6574283058661666876, guid: 2c3d7d9dec274434e823000f6880ecc4,
     type: 3}
 --- !u!114 &2035094556

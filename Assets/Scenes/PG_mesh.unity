@@ -1135,7 +1135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132edb3d6bc63489b819c5397dbb793e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
   fly_prefab: {fileID: 6574283058661666876, guid: 2c3d7d9dec274434e823000f6880ecc4,
     type: 3}
 --- !u!1 &865958758
@@ -2972,7 +2971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2031524269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3097,7 +3096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132edb3d6bc63489b819c5397dbb793e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
   fly_prefab: {fileID: 537829370}
 --- !u!1001 &2050129656
 PrefabInstance:
