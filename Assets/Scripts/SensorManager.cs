@@ -19,7 +19,7 @@ public class SensorManager : MonoBehaviour
 
     void Start()
     {
-      Screen.orientation = ScreenOrientation.Portrait;
+      Screen.orientation = ScreenOrientation.LandscapeLeft;
       m_gyro = Input.gyro;
       m_gyro.enabled = true;
       x = GameObject.Find("x").GetComponent<TextMeshProUGUI>();

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3acd6fe57257048db802c1c4c2b75248, type: 3}
+  m_Name: UniversalRP_SphereBoxMorph_Lit
+  m_EditorClassIdentifier: 
+  shaderName: UniversalRP_SphereBoxMorph_Lit
+  shaderReference: {fileID: 10722, guid: 0000000000000000f000000000000000, type: 0}
+  shaderTemplate: uRaymarching/UniversalRP/Unlit
+  variables:
+  - key: Name
+    value: UniversalRP_SphereBoxMorph_Lit
+  - key: ObjectShape
+    value: CUBE
+  - key: RaymarchingShaderDirectory
+    value: Assets/uRaymarching/Shaders/Include/UniversalRP
+  - key: RenderType
+    value: Transparent
+  - key: RenderQueue
+    value: Geometry
+  - key: LOD
+    value: 300
+  conditions:
+  - key: ShadowCaster
+    value: 0
+  - key: FullScreen
+    value: 0
+  - key: WorldSpace
+    value: 1
+  - key: FollowObjectScale
+    value: 0
+  - key: CameraInsideObject
+    value: 0
+  - key: UseRaymarchingDepth
+    value: 1
+  - key: FallbackToDiffuse
+    value: 1
+  - key: UseCameraDepthTextureForDepthTest
+    value: 0
+  - key: UseCameraDepthTextureForStartPos
+    value: 0
+  - key: DepthTestWithDepthTexture
+    value: 0
+  - key: StartFromDepthTexture
+    value: 0
+  - key: RayStopsAtDepthTexture
+    value: 0
+  - key: RayStartsFromDepthTexture
+    value: 0
+  - key: ObjectScale
+    value: 0
+  - key: CheckIfInsideObject
+    value: 1
+  - key: Blend
+    value: 0
+  - key: UseCameraDepthTexture
+    value: 0
+  - key: DisableViewCulling
+    value: 0
+  - key: SphericalHarmonicsPerPixel
+    value: 1
+  - key: UseGrabPass
+    value: 0
+  - key: ForwardAdd
+    value: 1
+  - key: FallbackToStandardShader
+    value: 1
+  blocks:
+  - key: Properties
+    value: '// _Color2("Color2", Color) = (1.0, 1.0, 1.0, 1.0)
+
+
+      _Color("Color2",
+      Color) = (0.8, 0.3, 1.0, 1.0)'
+    folded: 1
+  - key: DistanceFunction
+    value: "inline float DistanceFunction(float3 pos)\n{\n    float t = _Time.x;\n   
+      float a = 6 * PI * t;\n    float s = pow(sin(a), 2.0);\n    float d1 = Sphere(pos,
+      0.1);\n    float d2 = RoundBox(\n        0.1 - 0.1 * s,\n        0.1 / length(pos
+      * 2.0));\n    return lerp(d1, d2, s);\n}\t"
+    folded: 1
+  - key: PostEffect
+    value: 'inline void PostEffect(RaymarchInfo ray, inout PostEffectOutput o)
+
+      {
+
+      }'
+    folded: 1
+  constants: {fileID: 11400000, guid: 3fc7bca6894034dec9dc046eade7d602, type: 2}
+  basicFolded: 1
+  conditionsFolded: 1
+  variablesFolded: 1
+  materialsFolded: 1
+  constantsFolded: 1
